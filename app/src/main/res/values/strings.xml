@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Go4Lunch</string>
+
+
+    <string name="email_login_button_text">sign in with Email</string>
+    <string name="google_login_button_text">sign in with Google</string>
+    <string name="twitter_login_button_text">sign in with Twitter</string>
+
+
+    // BOTTOM NAVIGATION MENU
+    <string name="map_button_title">Map</string>
+    <string name="list_button_title">List</string>
+    <string name="coworkers_button_title">Workmates</string>
+
+
+    // TOOLBAR SEARCH MENU
+    <string name="search_button_title">search</string>
+
+
+    // HEADER LAYOUT
+    <string name="header_drawer_picture" translatable="false" />
+
+    <string name="user_picture" translatable="false" />
+
+
+
+    // DRAWER MENU
+    <string name="lunch_button_title">YOUR LUNCH</string>
+    <string name="settings_button_title">SETTINGS</string>
+    <string name="log_out_button_title">LOG OUT</string>
+
+
+</resources>
