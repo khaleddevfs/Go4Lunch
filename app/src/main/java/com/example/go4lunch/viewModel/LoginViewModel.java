@@ -1,4 +1,4 @@
-package com.example.go4lunch;
+package com.example.go4lunch.viewModel;
 
 import android.app.Activity;
 import android.util.Log;

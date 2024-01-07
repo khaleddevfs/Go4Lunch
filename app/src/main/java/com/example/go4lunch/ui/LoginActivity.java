@@ -1,6 +1,6 @@
-package com.example.go4lunch;
+package com.example.go4lunch.ui;
 
-import static com.example.go4lunch.LoginViewModel.RC_SIGN_IN;
+import static com.example.go4lunch.viewModel.LoginViewModel.RC_SIGN_IN;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import com.example.go4lunch.viewModel.LoginViewModel;
 import com.example.go4lunch.databinding.ActivityLoginBinding;
 
 
