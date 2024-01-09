@@ -1,22 +1,21 @@
 package com.example.go4lunch.ui;
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewTreeViewModelKt;
 
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
+import com.example.go4lunch.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.bitmap.CenterCrop;
-import com.example.go4lunch.R;
+
 import com.example.go4lunch.databinding.ActivityMainBinding;
 import com.example.go4lunch.fragments.MapsFragment;
 import com.example.go4lunch.fragments.RestaurantListFragment;
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.main_frame_layout, new MapsFragment())
+                .replace(id.main_frame_layout, new MapsFragment())
                 .commit();
 
 
@@ -73,17 +72,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     private void configureDrawerLayout() {
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, binding.mainDrawerLayout, binding.mainToolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
+                string.navigation_drawer_open, string.navigation_drawer_close);
+        toggle.getDrawerArrowDrawable().setColor(getResources().getColor(color.white));
         binding.mainDrawerLayout.addDrawerListener(toggle);
         toggle.syncState();
     }
 
     private void configureNavigationView() {
         binding.mainNavigationView.setNavigationItemSelectedListener(this);
-        ImageView imageUser = binding.mainNavigationView.getHeaderView(0).findViewById(R.id.user_navigation_header_image_view_picture);
-        TextView userNameTextView = binding.mainNavigationView.getHeaderView(0).findViewById(R.id.user_navigation_header_name_text);
-        TextView emailTextview = binding.mainNavigationView.getHeaderView(0).findViewById(R.id.user_navigation_header_email_text);
+        ImageView imageUser = binding.mainNavigationView.getHeaderView(0).findViewById(id.user_navigation_header_image_view_picture);
+        TextView userNameTextView = binding.mainNavigationView.getHeaderView(0).findViewById(id.user_navigation_header_name_text);
+        TextView emailTextview = binding.mainNavigationView.getHeaderView(0).findViewById(id.user_navigation_header_email_text);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
@@ -96,18 +95,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
-    @SuppressLint({"WrongConstant", "NonConstantResourceId"})
     public boolean onBottomNavigation(int itemId) {
         Fragment selectedFragment = null;
 
         switch (itemId) {
-            case R.id.bottom_navigation_menu_map_button:
+            case id.bottom_navigation_menu_map_button:
                 selectedFragment = new MapsFragment();
                 break;
-            case R.id.bottom_navigation_menu_list_button:
+            case id.bottom_navigation_menu_list_button:
                 selectedFragment = new RestaurantListFragment();
                 break;
-            case R.id.bottom_navigation_menu_workMates_button:
+            case id.bottom_navigation_menu_workMates_button:
                 selectedFragment = new WorkmatesFragment();
                 break;
         }
@@ -116,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             MainActivity.this
                     .getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.main_frame_layout, selectedFragment)
+                    .replace(id.main_frame_layout, selectedFragment)
                     .commit();
         }
         return true;
